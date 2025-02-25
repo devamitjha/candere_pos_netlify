@@ -1,0 +1,114 @@
+@import "../../global.scss";
+
+.card {
+    padding: 8px 0 16px;
+    background-color: $white;
+    box-shadow: 2px 3px 20px 0px rgb(0 0 0 / 6%);
+
+    &--info {
+        @include d_flex;
+        justify-content: space-between;
+
+        &-details {
+            @include d_flex;
+            justify-content: flex-end;
+            margin-right: 12px;
+
+            &-rating {
+                @include d_flex;
+                gap: 2px;
+                font-family: $lato;
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 18px;
+                letter-spacing: 0.21px; 
+            }
+
+            &-review {
+                @extend .body_4;
+                color: $label;
+            }
+
+            &-child {
+                position: relative;
+                margin: 0 4px;
+
+                &:not(:last-child):after {
+                    content: "";
+                    width: 1px;
+                    height: 60%;
+                    background-color: $line;
+                    position: absolute;
+                    top: 50%;
+                    right: -4px;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+
+    &--image {
+        padding: 15px;
+        
+        img {
+            margin: 0 auto;
+        }
+    }
+
+    &--actions {
+        @include d_flex;
+        justify-content: space-between;
+
+        &-items {
+            flex-basis: 100%;
+
+            img {
+                margin: 0 auto;
+            }
+        }
+    }
+
+    &--content {
+        margin-top: 24px;
+        text-align: center;
+
+        &-name {
+            @extend .body_4;
+            color: $label;
+            margin-bottom: 4px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+        }
+    }
+
+    &--price {
+        @include d_flex;
+        gap: 4px;
+        padding: 8px 4px;
+        margin-bottom: 8px;
+
+        &-new {
+            @extend .body_1;
+            font-weight: 700 !important;
+            color: $primary_900;
+        }
+
+        &-old {
+            @extend .body_5;
+            color: $label;
+            text-decoration: line-through;
+        }
+    }
+
+    &--offer {
+        @extend .body_5;
+        @extend .sm_radius;
+        padding: 2px 16px;
+        color: $primary_900;
+        background: $secondary_gradient;
+        padding: 2px 16px;
+        display: inline-flex;
+    }
+}

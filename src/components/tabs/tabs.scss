@@ -1,0 +1,35 @@
+@import '../../global.scss';
+
+.tabs {
+    &-headers {
+        @include d_flex;
+        background-color: $primary_background;
+        border-radius: 999px;
+        padding: 4px;
+        margin-bottom: 24px;
+    }
+
+    &-header {
+        flex-basis: 100%;
+        @extend .sub_heading_2;
+        color: $body;
+        padding: 6px 0;
+        border-radius: 999px;
+        text-align: center;
+
+        &.active {
+            background-color: $white;
+            box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.17)
+        }
+    }
+}
+
+.customForm {
+    .input_group_container {
+        margin-bottom: 28px;
+        
+        .input_group_ {
+            width: 100%;
+        }
+    }
+}

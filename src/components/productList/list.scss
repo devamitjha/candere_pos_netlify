@@ -1,0 +1,72 @@
+@import "../../global.scss";
+.plpWrapper {
+    padding: 16px 20px;
+
+    @media (max-width: 600px) {
+        padding: 12px 16px;
+    }
+
+    .headingBox {
+        margin-bottom: 12px;
+    }
+}
+
+.productCategories {
+    margin-bottom: 28px;
+    
+    &-title {
+        @extend .sub_heading_1;
+        color: $body;
+        margin-bottom: 16px;
+    }
+
+    &--options {
+        @include d_flex;
+        justify-content: space-between;
+    }
+
+    &--lists {
+        @include d_flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 16px;
+        list-style: none;
+    }
+
+    &--item {
+        @extend .body_3;
+        color: $body;
+        background-color: $primary_background;
+        padding: 6px 12px;
+        border-radius: 999px;
+        cursor: pointer;
+
+        &.active {
+            color: $primary_500;
+            background-color: $primary_100;
+        }
+    }
+
+    &--action {
+        @extend .sub_heading_2;
+        color: $white;
+        background-color: $primary_500;
+        border-radius: 999px;
+        padding: 8px 16px;
+        &:hover{
+            cursor: pointer;
+            text-decoration: none;
+            color: $white;
+        }
+    }
+}
+
+.cardWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    @media (max-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

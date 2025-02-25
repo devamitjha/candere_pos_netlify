@@ -1,0 +1,110 @@
+@import "../../global.scss";
+
+.loginPage {
+    @include d_flex;
+    flex-direction: column;
+    background-color: $primary_500;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.login {
+    &--logo {
+        @include img-fluid;
+        margin: 24px auto 5.20vw;
+        
+        @media (max-width: 1199px) {
+            width: 33.60vw;
+        }
+    }
+
+    &--box {
+        @extend .lg_radius;
+        background-color: $white;
+        padding: 24px;
+        max-width: 584px;
+        margin: 0 auto 72px;
+        width: 90%;
+
+        @media (max-width: 1199px) {
+            margin-bottom: 9.37vw;
+        }
+
+        .headingBox {
+            padding: 24px 0 32px;
+        }
+
+        &-assisted {
+            @extend .body_3;
+            color: $body;
+            text-align: center;
+        }
+    }
+
+    &--form {
+        margin: 24px 0;
+
+        .input_group_container {
+            margin-bottom: 24px;
+            
+            .input_group_ {
+                width: 100%;
+            }
+        }
+
+        &-btn {
+            background: $button_gradient;
+            border: none;
+            width: 100%;
+        }
+    }
+
+    &--terms {
+        @extend .body_5;
+        color: $placeholder;
+        text-align: center;
+
+        span {
+            @extend .body_4;
+            border-bottom: 1px solid;
+        }
+    }
+
+    &--action {
+        @extend .action_btn_2;
+        display: block;
+        color: $primary_500;
+        text-align: center;
+        margin-top: 24px;
+    }
+
+    &--passcode {
+        @include d_flex;
+        gap: 14px;
+        margin: 24px 0;
+
+        &-input {
+            @extend .body_2;
+            @extend .md_radius;
+            color: $body;
+            width: 48px;
+            height: 48px;
+            border: 1px solid $line;
+            margin: 0 !important;
+            text-align: center;
+
+            &:hover, 
+            &:active,
+            &:focus,
+            &:focus-visible {
+                border-color: $primary_500;
+                box-shadow: none;
+            }
+        }
+    }
+
+    &--verified {
+        @include img-fluid;
+        margin: 0 auto 24px;
+    }
+}

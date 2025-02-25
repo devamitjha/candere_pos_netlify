@@ -1,0 +1,40 @@
+@import "../../global.scss";
+
+.sePage {
+    @include d_flex;
+    flex-direction: column;
+    background-color: $primary_500;
+    height: 100%;
+    min-height: 100vh;
+
+    &-box {
+        @include d_flex;
+        flex-direction: column;
+        gap: 16px;
+        @extend .lg_radius;
+        background-color: $white;
+        padding: 24px;
+        max-width: 584px;
+        margin: 0 auto 72px;
+        width: 90%;
+
+        @media (max-width: 1199px) {
+            margin-bottom: 9.37vw;
+        }
+    }
+
+    &-result {
+        @extend .heading_3;
+        color: $headings;
+    }
+
+    &-orderNumber {
+        @extend .sub_heading_2;
+        color: $body;
+    }
+
+    &-status {
+        @extend .body_2;
+        color: $body;
+    }
+}

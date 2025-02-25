@@ -1,0 +1,27 @@
+@import '../../global.scss';
+
+.headingBox {
+    text-align: center;
+
+    &--title {
+        font-family: $cormorant;
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 41px;
+        color: $headings;
+        position: relative;
+
+        &:after {
+            content: "";
+            width: 24px;
+            height: 3px;
+            border-radius: 3px;
+            background: linear-gradient(90.05deg, #96fce9 -2.42%, #3fbbcb 53.98%, #42a3d0 103.75%);
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -8px;
+            margin: 0 auto;
+        }        
+    }
+}

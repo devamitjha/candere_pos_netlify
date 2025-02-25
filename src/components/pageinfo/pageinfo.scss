@@ -1,0 +1,19 @@
+@import "../../global.scss";
+
+.pageInfo {
+    @include d_flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+    
+    &-title {
+        @extend .sub_heading_1;
+        color: $body;
+    }
+
+    &-count {
+        @extend .body_4;
+        color: $label;
+        padding: 8px;
+    }
+}

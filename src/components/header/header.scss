@@ -1,0 +1,149 @@
+@import "../../global.scss";
+
+.header {
+    background-color: $white;
+    box-shadow: 0px 2px 2px 0px rgb(0 0 0 / 4%);
+    padding: 8px 20px;
+
+    &--wrapper {
+        @include d_flex;
+        justify-content: space-between;
+    }
+
+    &--redirect {
+        @include d_flex;
+        justify-content: flex-start;
+        gap: 12px;
+
+        &-menu {
+            cursor: pointer;
+            padding: 0 8px 0 0;
+        }
+    }
+
+    &--action {
+        @include d_flex;
+        justify-content: flex-end;
+        gap: 12px;
+
+        &-child {
+            padding: 8px 12px;
+
+            @media (max-width: 600px) {
+                padding: 8px;
+            }
+        }
+
+        &-link {
+            display: block;
+            position: relative;
+            // padding: 12px;
+
+            img {
+                width: 24px;
+                height: 24px
+            }
+        }
+
+        &-store {
+            @include d_flex;
+            gap: 8px;
+            @extend .md_radius;
+            border: 1px dashed $line;
+            // padding: 8px 16px;
+
+            // @media (max-width: 600px) {
+            //     padding: 8px;
+            // }
+
+            &-icon {
+                @media (max-width: 600px) {
+                    display: none !important;
+                }
+            }
+
+            &-name {
+                @extend .body_3;
+                color: $body;
+
+                @media (max-width: 600px) {
+                    font-size: 10px;
+                }
+            }
+        }
+
+        &-initials {
+            @include d_flex;
+            @extend .sub_heading_2;
+            color: $white;
+            background-color: $primary_500;
+            width: 32px;
+            height: 32px;
+            border-radius: 999px;
+            &:hover,
+            &:focus,
+            &:visited {
+                color: $white;
+            }
+        }
+
+        &-badge {
+            @extend .body_5;
+            position: absolute;
+            top: 0;
+            right: -2px;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 999px;
+            color: $white;
+            background: $primary_500;
+        }
+    }
+}
+
+.menu {
+    background-color: $white;
+    padding: 24px;
+    box-shadow: $elevation_7;
+    border-radius: 0 0 16px 16px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+
+    &--item {
+        @include d_flex;
+        justify-content: space-between;
+        min-height: 60px;
+        
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+
+        &-title {
+            @extend .heading_3;
+            color: $headings;
+        }
+
+        &-text {
+            @extend .sub_heading_2;
+            color: $headings;
+        }
+
+        &-action {
+            @extend .action_btn_2;
+            color: $white;
+            background-color: $error;
+            border-radius: 999px;
+            padding: 8px 16px;
+        }
+
+        &.logout {
+            border-top: 1px dashed $line;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@import "../../global.scss";
+
+.storeAddress {
+    @include d_flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 16px 24px;
+    background-color: $white;
+
+    &:hover {
+        background-color: $primary_50;
+    }
+
+    &:not(:last-child) {
+        border-bottom: 1px dashed #CCC6C6;
+    }
+
+    &--content {
+        &-title {
+            @extend .sub_heading_1;
+            color: $headings;
+            margin-bottom: 8px;
+        }
+
+        &-para {
+            @extend .body_3;
+            color: $body;
+        }
+    }
+
+    &--map {
+        @include d_flex;
+        gap: 4px;
+        white-space: nowrap;
+
+        &-distance {
+            font-family: $lato;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: 1px;
+            color: $body;
+        }
+    }
+}

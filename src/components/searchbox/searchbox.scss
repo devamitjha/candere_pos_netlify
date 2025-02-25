@@ -1,0 +1,178 @@
+@import "../../global.scss";
+
+.searchBox {
+    padding: 24px 16px;
+
+    &--item {
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+    }
+
+    &--action {
+        @include d_flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+
+        &-title {
+            @extend .sub_heading_1;
+            color: $body;
+        }
+
+        &-link {
+            @extend .action_btn_2;
+            color: $primary_500;
+            cursor: pointer;
+        }
+    }
+
+    &--card {
+        @include d_flex;
+        gap: 12px;
+        position: relative;
+
+        &-image {
+            @extend .heading_1;
+            color: $primary_500;
+            width: 100px;
+            height: 100px;
+            line-height: 100px !important;
+            background: $primary_gradient_dark;
+            border-radius: 999px;
+            text-align: center;
+
+            @media (max-width: 600px) {
+                width: 80px;
+                height: 80px;
+                line-height: 80px !important;
+            }
+        }
+
+        &-center {
+            flex-basis: 80%;
+        }
+
+        &-right {
+            @media (max-width: 600px) {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+
+        &-data {
+            &-name {
+                @extend .heading_5;
+                color: $headings;
+                margin-bottom: 12px;
+            }
+
+            &-lists {
+                list-style: none;
+                @include d_flex;
+                justify-content: flex-start;
+                gap: 12px;
+                margin-bottom: 12px;
+                flex-wrap: wrap;
+            }
+            
+            &-item {
+                @extend .body_4; 
+                color: $body;
+                position: relative;
+                background-color: $line;
+                padding: 4px 8px 4px 28px;
+                border-radius: 999px;
+
+                &:before {
+                    content: ""; 
+                    //background: url('../../assets/images/initial.svg') no-repeat center center;
+                    width: 14px;
+                    height: 14px;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translate(50%, -50%);
+                }
+            }
+
+            &-action {
+                @extend .link_2;
+                color: $body;
+            }
+        }
+    }
+
+    &--input {
+        position:relative;
+        .input_group_container {
+            .input_group_ {
+                width: 100%;
+
+                .input_type_text {
+                    padding-right: 80px;
+                }
+            }
+        }
+
+        &-icon {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(-40%, -50%);
+            z-index: 1;
+            cursor: pointer;
+        }
+    }
+    .loadingCustomer{
+        @include d_flex;
+    }
+}
+
+// Search Results
+.searchResults {
+    @include d_flex;
+    justify-content: space-between;
+    
+    &:not(:last-child) {
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+        border-bottom: 1px dashed $line;
+    }
+
+    &-wrapper {
+        border-radius: 0 0 8px 8px;
+        padding: 12px;
+        box-shadow: 0px 8px 16px -6px #18274B14, 0px 6px 8px -6px #18274B1F;
+        margin: 0 0 12px;
+        height: 180px;
+        overflow-x: scroll; 
+    }
+
+    &-action {
+        @extend .action_btn_2;
+        color: $primary_700;
+    }
+
+    .userData {
+        &-text {
+            @extend .body_3;
+            color: $body;
+
+            &:not(:last-child) {
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    .filter--card {
+        margin-bottom: 0;
+    }
+}
+
+
+#scanner video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures proper scaling */
+  }

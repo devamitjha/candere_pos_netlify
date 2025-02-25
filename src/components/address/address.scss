@@ -1,0 +1,90 @@
+@import '../../global.scss';
+
+.addressBox {
+    margin-bottom: 24px;
+    
+    &--wrap {
+        @extend .md_radius;
+        background-color: $white;
+        padding: 16px;
+    }
+
+    &--card {
+        &-text {
+            @extend .body_4;
+            color: $body;
+
+            span {
+                @extend .sub_heading_3;
+                color: $headings;
+                display: inline-block;
+                margin-left: 8px;
+            }
+        }
+
+        &-address {
+            @extend .body_4;
+            color: $body;
+            margin: 8px 0;
+        }
+    }
+    
+    &--foot {
+        @include d_flex;
+        justify-content: space-between;
+        padding-top: 12px;
+        margin-top: 12px;
+        border-top: 1px dashed $line;
+
+        &-action {
+            @include d_flex;
+            gap: 16px;
+            @extend .body_3;
+            color: $body;
+            text-decoration: underline;
+
+            &-child {
+                width: 34px;
+                height: 34px;
+                @extend .md_radius;
+                padding: 8px;
+                border: 1px solid $line;
+
+                img {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+
+        .radio--wrap {
+            @extend .body_3;
+            color: $body;
+            padding-left: 32px;
+            width: auto;
+        }
+    }
+
+    &--billing {
+        @include d_flex;
+        justify-content: space-between;
+        padding: 12px 0;
+        margin-top: 12px;
+        border-top: 1px dashed $line;
+
+        &-text {
+            @include d_flex;
+            justify-content: flex-start;
+            gap: 12px;
+            @extend .sub_heading_3;
+            color: $body;
+        }
+
+        .checkbox--wrap {
+            @extend .body_3;
+            color: $body;
+            padding-left: 32px;
+            width: auto;
+        }
+    }
+}

@@ -1,0 +1,381 @@
+@import './global.scss';
+
+// Bottom Sheet
+[data-rsbs-footer] {
+    padding: 0;
+}
+
+.sheet {
+    &Header {
+        position: relative;
+        padding: 4px 0 16px;
+    
+        &--close {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+    }
+
+    &Body {
+        padding: 20px 20px;
+        margin-top: 20px;
+
+        &--form {
+            .input_group_container {
+                margin-bottom: 24px;
+
+                .input_group_ {
+                    @extend .w-100;
+                }
+            }
+        }
+
+        .primary_btn {
+            background: $button_gradient;
+        }
+
+        .orderSummary {
+            &--text,
+            .handler,
+            .summaryTable thead {
+                display: none;
+            }
+
+            &--wrap {
+                padding-top: 0;
+                @extend .md_radius;
+            }
+
+            .summaryTable {
+                tbody {
+                    tr {
+                        &:first-child td {
+                            padding-top: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &Footer {
+        @include d_flex;
+
+        > .base_btn {
+            flex-basis: 100%;
+            border-radius: 0;
+            border: none;
+
+            &:hover,
+            &:focus {
+                box-shadow: none;
+                outline: none
+            }
+        }
+    }
+
+    &-userDetails {
+        @include d_flex;
+        justify-content: space-between;
+
+        > p {
+            @extend .body_3;
+            color: $body;
+            margin: {
+                top: 8px;
+            }
+        }
+    }
+
+    &--orderTitle {
+        @include d_flex;
+        justify-content: space-between;
+        padding-bottom: 14px;
+        border-bottom: 1px dashed $line;
+
+        &-title {
+            @extend .sub_heading_3;
+            color: $headings;
+            text-transform: uppercase;
+        }
+
+        &-action {
+            @extend .action_btn_2;
+            color: $primary_500;
+
+            &:hover,
+            &:focus {
+                color: $primary_500;
+            }
+        }
+    }
+
+    &--pageInfo {
+        padding: 8px 0;
+
+        .pageInfo-title {
+            @extend .body_4;
+            color: $body;
+        }
+
+        .pageInfo-count {
+            @extend .sub_heading_2;
+            color: $headings;
+        }
+    }
+
+    &--card {
+        @extend .sm_radius;
+        @include d_flex;
+        justify-content: flex-start;
+        background-color: $white;
+        width: 360px;
+        white-space: nowrap;
+
+        &-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-y: scroll;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        &-image {
+            @extend .sm_radius;
+            width: 100px;
+            height: 100px;
+        }
+
+        &-right {
+            padding: 16px;
+            width: 260px;
+        }
+
+        &-title {
+            @extend .body_3;
+            color: $headings;
+            margin-bottom: 12px;
+            display: -webkit-box;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            white-space: normal;
+            overflow: hidden;
+        }
+
+        &--details {
+            @include d_flex;
+            justify-content: space-between;
+
+            &-qty {
+                @extend .body_4;
+                color: $label;
+
+                span {
+                    color: $headings;
+                }
+            }
+
+            &-price {
+                @extend .body_3;
+                color: $headings;
+            }
+        }
+    }
+}
+// Bottom Sheet
+
+// pageTitle
+.pageTitle {
+    @include d_flex;
+    padding: 12px 4px;
+    background-color: $primary_background;
+    position: relative;
+
+    &-back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    &-title {
+        @extend .heading_6;
+        color: $headings;
+    }
+}
+// pageTitle
+
+.profile {
+    padding: 0 16px;
+
+    &-wrapper {
+        @include d_flex;
+        justify-content: space-between;
+    }
+
+    &--image {
+        @include d_flex;
+        width: 100px;
+        height: 100px;
+        border-radius: 999px;
+        background-color: $primary_background;
+        margin: 24px auto;
+    }
+
+    &-logout {
+        @extend .action_btn_2;
+        color: $white;
+        padding: 8px 16px;
+        background-color: $error;
+        border-radius: 999px;
+    }
+
+    .addressBox {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+
+        &--wrap {
+            border-bottom: 2px solid $primary_700;
+            box-shadow: $elevation_4;
+
+            // &:not(:last-child) {
+            //     margin-bottom: 28px;
+            // }
+        }
+
+        &--foot {
+            justify-content: flex-end;
+        }
+    }
+
+    .addAddress {
+        @include d_flex;
+        @extend .body_2;
+        box-shadow: $elevation_4;
+        background-color: $primary_100;
+    }
+}
+
+// Modal
+.modal {
+    &-overlay {
+        @include d_flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 3;
+    }
+
+    &-wrapper {
+        @extend .lg_radius;
+        background-color: $white;
+        padding-top: 12px;
+        max-width: 584px;
+        margin: 0 auto 72px;
+        width: 90%;
+        position: relative; 
+        padding: 24px 20px;
+    }
+
+    &-head {
+        @extend .sub_heading_1;
+        color: $headings;
+        position: relative;
+        padding: 8px 0;
+        text-align: center;
+        margin: 24px 0;
+
+        .modal-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: transparent;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 1;
+        }
+    }
+
+    &-content {
+        @include d_flex;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+
+        &-info {
+            @extend .body_3;
+            color: $body;
+        }
+    }
+
+    &-foot {
+        margin-top: 24px;
+        
+        @include d_flex;
+        gap: 20px;
+
+        &-action {
+            flex-basis: 100%;
+        }
+    }
+}
+// Modal
+
+//Order Summary
+.orderSummary {
+    margin-bottom: 16px;
+
+    &--text {
+        @extend .sub_heading_2;
+        color: $body;
+        margin-bottom: 12px;
+    }
+
+    &--wrap {
+        @extend .lg_radius;
+        background-color: $white;
+        padding-top: 24px;
+    }
+
+    .summaryTable {
+        table-layout: fixed;
+
+        tr {
+            th,
+            &.grandTotal td,
+            &.totalSavings td {
+                padding: 16px;
+            }
+
+            th {
+                border-bottom: 1px dashed $line;
+            }
+
+            &.grandTotal td {
+                border-top: 1px dashed $line;
+                // border-bottom: 1px dashed $line;
+                @extend .sub_heading_1;
+                color: $body;
+            }
+
+            td {
+                padding: 6px 16px;
+
+                &:first-child {
+                    color: $body !important;
+                }
+            }                
+        }
+    }
+}
+//Order Summary

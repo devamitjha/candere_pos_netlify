@@ -1,0 +1,166 @@
+@import '../../global.scss';
+
+.voucher {
+    @extend .md_radius;
+    background-color: $white;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+
+    &--child {
+        @include d_flex;
+        justify-content: space-between;
+    }
+    
+    &--bottom {
+        padding-top: 16px;
+        border-top: 1px dashed $line;
+        margin-top: 16px
+    }
+
+    &-title {
+        @extend .sub_heading_2;
+        color: $body;
+    }
+
+    &-offers {
+        @extend .action_btn_2;
+        color: $success;
+        cursor: pointer;
+    }
+
+    &-message {
+        @extend .sub_heading_2;
+        @include d_flex;
+        justify-content: flex-start;
+        gap: 8px;
+        color: $body;
+
+        &.success {
+            color: $success;
+        }
+
+        &.error {
+            color: $error;
+        }
+    }
+
+    &--manual {
+        margin-bottom: 16px;
+
+        .input_group_container {
+            gap: 16px;
+
+            .input_group_ {
+                width: calc(100% - 100px);
+            }
+
+            .primary_btn {
+                background: $primary_500;
+                border: none;
+
+                &:hover,
+                &:focus {
+                    border: none;
+                }
+            }
+        }
+
+        .voucher-message {
+            margin-top: 8px;
+        }
+    }
+
+    &-divider {
+        @include d_flex;
+        gap: 8px;
+        @extend .body_2;
+        color: $body;
+        margin-bottom: 16px;
+        position: relative;
+
+        &:before,
+        &:after {
+            content: "";
+            width: 46%;
+            height: 1px;
+            background-color: $line;
+            position: absolute;
+            top: 50%;
+        }
+
+        &:before {
+            left: 0;
+            right: auto;
+        }
+
+        &:after {
+            right: 0;
+            left: auto;
+        }
+    }
+
+    &-applyTitle {
+        @extend .sub_heading_2;
+        color: $body;
+        text-align: center;
+    }
+
+    &-lists {
+        list-style-type: none;
+        @include d_flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 16px;
+    }
+
+    &--item {
+        @include d_flex;
+        justify-content: space-between;
+        @extend .md_radius;
+        background-color: $primary_50;
+        padding: 16px 24px;
+        width: 100%;
+
+        &--content {
+            &-title {
+                @extend .sub_heading_1;
+                color: $headings;
+            }
+
+            &-subTitle {
+                @extend .body_3;
+                color: $body;
+            }
+        }
+
+        &-action {
+            background-color: $white;
+            color: $primary_500;
+            cursor: pointer;
+            position: relative;
+
+            &:before {
+                content: '';
+                border: 1px dashed $primary_200;
+                position: absolute;
+                top: 0;
+                left: -20px;
+                bottom: 0;
+            }
+
+            &:hover,
+            &:focus {
+                background-color: $primary_500;
+                color: $white;
+            }
+        }
+    }
+
+    &-loading,
+    &-error {
+        @extend .body_2;
+        color: $headings;
+        text-align: center;
+        margin: 16px 0 20px;
+    }
+}

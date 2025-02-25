@@ -1,0 +1,229 @@
+@import "../../global.scss";
+
+.categories {
+    &Wrapper {
+        padding: 16px 20px;
+    }
+
+    &--listing {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin: 40px 0;
+
+        @media (max-width: 600px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &--item {
+        @extend .md_radius;
+        position: relative;
+        height: 348px;
+        overflow: hidden;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+        }
+
+        &-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &-content {
+            position: absolute;
+            bottom: 12px;
+            left: 16px;
+            z-index: 1;
+
+            &-count {
+                @extend .body_4;
+                font-weight: 500;
+                color: $white;
+                display: block;
+            }
+
+            &-name {
+                @extend .heading_5;
+                font-weight: 600;
+                color: $white;
+                display: block;
+            }
+        }
+    }
+}
+
+.mainMenu {
+    &--title {
+        @extend .overline;
+        color: $primary_900;
+        padding: 16px;
+    }
+
+    &--cta {
+        margin: 40px 16px 24px;
+        background: $button_gradient;
+    }
+
+    &--body {
+        &-box {
+            margin-bottom: 16px;
+        }
+    }
+}
+.recommendBox {
+    &--wrapper {
+        position: relative;
+        margin: 0 16px;
+        display: block;
+    }
+    
+    &--image {
+        @extend .md_radius;
+    }
+} 
+.shopBy {
+    &--list {
+        @include d_flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        row-gap: 16px;
+
+        .mainMenu--title {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        &--items {
+            @include d_flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 0 16px;
+            background-color: $white;
+            flex: 0 0 25%;
+            max-width: 25%;
+
+            @media (max-width: 600px) {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            &-pic {
+                width: 60px; 
+                height: 60px;
+            }
+
+            &-content {
+                &-title {
+                    @extend .body_4;
+                    color: $headings;
+                }
+
+                &-desc {
+                    color: $label;
+                    font-size: 10px;
+                    font-weight: 400;
+                    line-height: 16px;
+                    letter-spacing: 0.2px;
+                }
+            }
+        }
+    }
+
+    &--grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .mainMenu--title {
+            grid-column: span 2;
+        }
+
+        &--items {
+            @include d_flex;
+            justify-content: flex-start !important;
+            gap: 12px;
+            @extend .body_4;
+            color: $headings;
+            padding: 10px 16px;
+            background-color: $white;
+
+            &-image {
+                width: 29px;
+                height: 28px;
+            }
+
+            &.shopBy--grid--cta {
+                @extend .action_btn_2;
+                color: $primary_500;
+                grid-column: span 2;
+                justify-content: center !important;
+                margin-top: 8px;
+                padding: 8px 16px;
+                text-align: center;
+
+                .shopBy--grid--items-image {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &--occasion {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+
+        @media (max-width: 600px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .mainMenu--title {
+            grid-column: span 5;
+
+            @media (max-width: 600px) {
+                grid-column: span 3;
+            }
+        }
+
+        &--items {
+            padding: 8px 16px;
+            text-align: center;
+            @extend .body_4;
+            color: $headings;
+            background-color: $white;
+
+            img {
+                display: block;
+                width: 75px;
+                height: 75px;
+                border-radius: 75px;
+                margin: 0 auto 4px auto;
+            }
+        }
+    }
+
+    &--price {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        .mainMenu--title {
+            grid-column: span 3;
+        }
+
+        &--items {
+            @include d_flex;
+            @extend .sm_radius;
+            @extend .body_4;
+            background-color: $surface_background;
+            height: 40px;
+            margin: 10px 16px;
+        }
+    }
+}
