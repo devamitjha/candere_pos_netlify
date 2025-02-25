@@ -39,7 +39,7 @@ const Searchbox = () => {
                 let config = {
                     method: 'get',
                     maxBodyLength: Infinity,
-                    url: `/rest/V1/customers/search?searchCriteria[filterGroups][0][filters][0][field]=phone&searchCriteria[filterGroups][0][filters][0][value]=%25${searchCustomer}%25&searchCriteria[filterGroups][0][filters][0][condition_type]=like&searchCriteria[pageSize]=5`,
+                    url: `/api/V1/customers/search?searchCriteria[filterGroups][0][filters][0][field]=phone&searchCriteria[filterGroups][0][filters][0][value]=%25${searchCustomer}%25&searchCriteria[filterGroups][0][filters][0][condition_type]=like&searchCriteria[pageSize]=5`,
                     headers: { 
                         'Content-Type': 'application/json',
                         'Authorization': 'Bearer 9tcpn4uq9my8ymfj0qbdsscld9pqzlta'
@@ -135,7 +135,7 @@ const Searchbox = () => {
           let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: '/rest/V1/pos-customermanagement/checkcustomer',
+            url: '/api/V1/pos-customermanagement/checkcustomer',
             headers: { 
               'Content-Type': 'application/json', 
               'Authorization': 'Bearer 9tcpn4uq9my8ymfj0qbdsscld9pqzlta', 
@@ -258,7 +258,7 @@ const Searchbox = () => {
           let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: '/rest/V1/pos-customermanagement/registerSignup',
+            url: '/api/V1/pos-customermanagement/registerSignup',
             headers: { 
               'Content-Type': 'application/json', 
               'Authorization': 'Bearer 9tcpn4uq9my8ymfj0qbdsscld9pqzlta', 

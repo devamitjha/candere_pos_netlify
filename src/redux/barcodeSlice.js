@@ -42,7 +42,7 @@ export const fetchBarcodeProducts = (searchProduct, storeCode, agentCodeOrPhone,
 
   try {
       const response = await axios.post(
-          '/rest/V1/pos-productmanagement/productsearch',
+          '/api/V1/pos-productmanagement/productsearch',
           JSON.stringify({
             "storeCode": storeCode,
             "agentCode": agentCodeOrPhone,

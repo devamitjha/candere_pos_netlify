@@ -5,7 +5,7 @@ export const fetchProductsData = async (storeCode, agentCodeOrPhone, customer_id
   let config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: '/rest/V1/pos-productmanagement/getproducts',
+    url: '/api/V1/pos-productmanagement/getproducts',
     headers: {
         'Content-Type': 'application/json',
         Authorization: 'Bearer 9tcpn4uq9my8ymfj0qbdsscld9pqzlta',

@@ -66,7 +66,7 @@ const handleSubmit = async (event) => {
 
   let config = {
     method: 'post',
-    url: '/rest/V1/pos-agentmanagement/agentlogin',
+    url: '/api/V1/pos-agentmanagement/agentlogin',
     headers: { 
       'Content-Type': 'application/json', 
       'Authorization': 'Bearer 9tcpn4uq9my8ymfj0qbdsscld9pqzlta',

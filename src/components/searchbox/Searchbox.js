@@ -168,7 +168,7 @@ const Searchbox = () => {
           let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: '/rest/V1/pos-customermanagement/checkcustomer',
+            url: '/api/V1/pos-customermanagement/checkcustomer',
             headers: { 
               'Content-Type': 'application/json', 
               'Authorization': 'Bearer 9tcpn4uq9my8ymfj0qbdsscld9pqzlta', 
@@ -340,7 +340,7 @@ const Searchbox = () => {
             let config = {
                 method: 'post',
                 maxBodyLength: Infinity,
-                url: '/rest/V1/pos-customermanagement/registerSignup',
+                url: '/api/V1/pos-customermanagement/registerSignup',
                 headers: { 
                     'Content-Type': 'application/json', 
                     'Authorization': 'Bearer 9tcpn4uq9my8ymfj0qbdsscld9pqzlta', 
@@ -386,7 +386,7 @@ const Searchbox = () => {
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: '/rest/V1/pos-customermanagement/verifyemail',
+            url: '/api/V1/pos-customermanagement/verifyemail',
             headers: { 
             'Content-Type': 'application/json', 
             'Authorization': 'Bearer 9tcpn4uq9my8ymfj0qbdsscld9pqzlta',
